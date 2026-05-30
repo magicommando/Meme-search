@@ -1,10 +1,17 @@
-async function searchMemes(query) {
-    const res = await fetch("https:// api.imgflip.com/get_memes");
-    const data = await res.json();
-    const memes = data.data.memes;
+async function getTopMemes() {
+    const respond = await fetch('https://api.imgflip.com/get_memes');
+    const data = await respond.json();
+    displayMemes(data.data.memes);
 }
 
-function searchMemes(query) {
-    const q = query.toLowerCase();
-    return memes.filter(m => m.name.toLowerCase().includes(q));
+function displayMemes(memes) {
+    const results = document.getElementById("results");
+    results.innerHTML = "";
+    memes.forEach(meme => {
+        const img = document.createElement("img");
+        img.src = meme.url;
+        img.alt = meme.name;
+        results.appendChild(img);
+
+    });
 }
