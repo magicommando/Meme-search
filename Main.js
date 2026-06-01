@@ -30,6 +30,7 @@ function renderPaginationControls() {
 
    
     footer.innerHTML = html;
+    
      document.querySelectorAll(".page-btn").forEach(btn => {
          btn.addEventListener("click", () => {
             currentPage = Number(btn.dataset.page);

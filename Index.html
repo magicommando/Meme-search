@@ -4,39 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meme Search Engine</title>
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
 </head>
-<h1 style="text-align: center;">Search Memes and make memes!!</h1>
+
 <body>
+
     <header>
-    <h1 class="site-title">Meme Search</h1>
-      
-     <nav class="navbar">
-           <a href="#">Home</a>
-           <a href="#">Top Memes</a>
-           <a href="#">Create</a>
-           <a href="#">About</a> 
-      </nav>  
+        
+
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#" id="getTopMemes">Top Memes</a>
+            <a href="#" id="makeMemes">Create</a>
+            <a href="#">About</a>
+        </nav>
     </header>
 
     <section class="search-section">
-      <form id="searchForm"></form>
-        <input type="search" id="searchInput" placeholder="Search memes..." />
-        <button type="submit">Search</button>
-        <button type="button" id="getTopMemes">Get Top Memes</button>
-        <button type="button" id="makeMemes">Make Memes</button>
-      </form>
-    </section> 
-    
+      
+        <form id="searchForm">
+          <h1 class="site-title">Meme Search</h1>
+            <input type="search" id="searchInput" placeholder="Search memes..." />
+            <button type="submit">Search</button>
+        </form>
+    </section>
+
     <main id="results" class="grid-container">
-
     </main>
-    <footer>
-        <p> Keep searching...<span id="pageNumbers">1 2 3 4 5 6</span> <a href="#">Next</a></p>
-        <small>Sourced from Imgflip API !2026</small>
-    </footer>
-    <script src="js/Main.js"></script>
-</body>
 
+    <footer>
+        <small>Sourced from Imgflip API ©2026</small>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
 </html>
