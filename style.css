@@ -1,0 +1,55 @@
+body {
+    background: url('Assets/dark-jungle-bckgrnd.png') repeat;
+    font-family: 'orbitron', sans-serif;
+    color: #fff;
+}
+@media (max-width: 480px) {
+    .navbar { 
+        flex-direction: column;
+    }
+    .grid-container {
+        grid-template-columns: 1fr;
+    }
+}
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+.navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    background-color:green;
+}
+.meme-img {
+    width: 100%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.6);
+    border-radius: 6px;
+    transition: transform 0.02 ease;
+}
+.meme-img:hover {
+    transform: scale(1.05);
+}
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.page-btn {
+    padding: 6px 12px;
+    background: #222;
+    color: #fff;
+    border: #fff;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.page-btn.active {
+    background:n #0f0;
+    color: #000;
+    font-weight: bold;
+}
