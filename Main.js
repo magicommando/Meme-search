@@ -2,30 +2,23 @@ let allMemes = [];
 let currentPage = 1;
 const pageSize = 12;
 
-async function TopMemes() {
-    const respond = await fetch('https://api.imgflip.com/get_memes');
-    const data = await respond.json();
-    allMemes = data.data.memes;
-    currentPage = 1;
-    renderpage();
-}
 function renderPage() {
     const start = (currentPage - 1) * pageSize;
     const end = start + pageSize;
     const pageMemes = allMemes.slice(start, end);
 
     displayMemes(pageMemes);
-    renderPaginantionControls();
+    renderPaginationControls();
 }
 
-function renderPaginationsControls() {
+function renderPaginationControls() {
     const footer = document.querySelector("footer");
     const totalPages = Math.ceil(allMemes.length / pageSize);
 
     let html = '<div class="pagination">';
 
     if (currentPage > 1) {
-        html += `<button class="page-btn" data-page=${currentPage - 1}">Prev</button>`;
+        html += `<button class="page-btn" data-page="${currentPage - 1}">Prev</button>`;
     }
     for (let i = 1; i <= totalPages; i++) {
         html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
@@ -34,19 +27,21 @@ function renderPaginationsControls() {
         html += `<button class="page-btn" data-page="${currentPage + 1}">Next</button>`;
     }
     html += '</div>';
+
+    document.querySelectorAll(".page-btn").forEach(btn => { btn.addEventListener("click", () => { currentPage = Number(btn.dataset.page); renderPage();
+    });
+});
     footer.innerHTML = html;
 }
 
-document.querySelectorAll(".page-btn").forEach(btn => { btn.addEventListener("click", () => { currentPage = Number(btn.dataset.page); renderPage();
-    });
-});
+
 
 
 function displayMemes(memes) {
     const results = document.getElementById("results");
     results.innerHTML = "";
 
-    memes.forEach(meme => {
+    memes.forEach((meme, index) => {
         const img = document.createElement("img");
         img.src = meme.url;
         img.alt = meme.name;
@@ -92,7 +87,8 @@ async function fetchTopMemes() {
     }
 }
 
-document.getElementById("searchForm").addEventListener("click", async () => {
+document.getElementById("searchForm").addEventListener("submit", async (e) => {
+    e.preventDefault();
     const query = document.getElementById("searchInput").value.trim();
     const memes = await fetchTopMemes();
     if (query.length > 0){
