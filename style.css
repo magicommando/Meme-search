@@ -27,8 +27,16 @@ body {
     width: 100%;
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
     border-radius: 6px;
-    transition: transform 0.02 ease;
+    transform: translateY(10px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+
 }
+
+.meme-.img.fade-in {
+    opacity: 1;
+    transform: transLateY(0);
+}
+
 .meme-img:hover {
     transform: scale(1.05);
 }

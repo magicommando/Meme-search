@@ -46,14 +46,18 @@ function displayMemes(memes) {
     const results = document.getElementById("results");
     results.innerHTML = "";
 
-    if (memes.length === 0) {
-        results.innerHTML = "<p>No memes found.</p>";
-        return;
-    }
     memes.forEach(meme => {
         const img = document.createElement("img");
         img.src = meme.url;
         img.alt = meme.name;
+        img.classList.add("meme-img");
+
+        img.onload = () => {
+            setTimeout(() => {
+            img.classList.add("fade-in");
+            }, index * 50);
+        };
+
         results.appendChild(img);
 
     });
