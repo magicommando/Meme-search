@@ -28,13 +28,15 @@ function renderPaginationControls() {
     }
     html += '</div>';
 
-    document.querySelectorAll(".page-btn").forEach(btn => { btn.addEventListener("click", () => { currentPage = Number(btn.dataset.page); renderPage();
-    });
-});
+   
     footer.innerHTML = html;
+     document.querySelectorAll(".page-btn").forEach(btn => {
+         btn.addEventListener("click", () => {
+            currentPage = Number(btn.dataset.page);
+            renderPage();
+         });
+     });
 }
-
-
 
 
 function displayMemes(memes) {
@@ -90,15 +92,15 @@ async function fetchTopMemes() {
 document.getElementById("searchForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const query = document.getElementById("searchInput").value.trim();
-    const memes = await fetchTopMemes();
     if (query.length > 0){
         searchMemes(query);
     }
 });
 
 document.getElementById("getTopMemes").addEventListener("click", async () => {
-    const memes = await fetchTopMemes();
-    displayMemes(memes);
+    allMemes = await fetchTopMemes();
+    currentPage=1;
+    renderPage();
 });
 
 document.getElementById("makeMemes").addEventListener("click", () => {
