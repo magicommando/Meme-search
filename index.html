@@ -11,23 +11,30 @@
 <body>
 
     <header>
-        
+        <div class="nav-left">
+            <img src="Assets/logo.png" alt=" Meme search Logo" class="logo">
+            <h1 class="site-title">Meme Search</h1>
+        </div>
+        <div class="welcome">
+        <h2>Welcome!</h2>
+        <p>Discover and search for the funniest memes!</p>
+    </div>
 
         <nav class="navbar">
-            <a href="#">Home</a>
-            <a href="#" id="getTopMemes">Top Memes</a>
-            <a href="#" id="makeMemes">Createe</a>
-            <a href="#">About</a>
+            <a class="nav-btn blue" href="#" id="home">Home</a>
+            <a class="nav-btn green" href="#" id="getTopMemes">Top Memes</a>
+            <a class="nav-btn red" href="#" id="makeMemes">Create</a>
+            <a class="nav-btn purple" href="#">About</a>
         </nav>
+        
     </header>
 
     <section class="search-section">
-      
-        <form id="searchForm">
-          <h1 class="site-title">Meme Search</h1>
+        <form id="searchForm" class="search-bar">
+            <span class=" icon search-icon" id="submitIcon">🔍</span>
             <input type="search" id="searchInput" placeholder="Search memes..." />
-            <button type="submit">Search</button>
-        </form>
+            <span class="icon clear-icon" id="clearBtn">✕</span>
+            </form>
     </section>
 
     <main id="results" class="grid-container">

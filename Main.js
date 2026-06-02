@@ -30,7 +30,7 @@ function renderPaginationControls() {
 
    
     footer.innerHTML = html;
-    
+
      document.querySelectorAll(".page-btn").forEach(btn => {
          btn.addEventListener("click", () => {
             currentPage = Number(btn.dataset.page);
@@ -90,12 +90,37 @@ async function fetchTopMemes() {
     }
 }
 
+async function loadHome() {
+    allMemes = await fetchTopMemes();
+    currentPage = 1;
+    renderPage();
+}
+
+document.getElementById("home").addEventListener("click", () => {
+    document.getElementById("searchInput").value = "";
+
+    allMemes = [];
+    currentPage = 1;
+
+    const results = document.getElementById("results");
+    const footer = document.querySelector("footer");
+    results.innerHTML ="";
+    
+    footer.innerHTML = "";
+});
+
 document.getElementById("searchForm").addEventListener("submit", async (e) => {
     e.preventDefault();
     const query = document.getElementById("searchInput").value.trim();
     if (query.length > 0){
         searchMemes(query);
     }
+});
+
+document.getElementById("clearBtn").addEventListener("click", () => {
+    const input = document.getElementById("searchInput");
+    input.value = "";
+    input.focus();
 });
 
 document.getElementById("getTopMemes").addEventListener("click", async () => {
@@ -107,3 +132,16 @@ document.getElementById("getTopMemes").addEventListener("click", async () => {
 document.getElementById("makeMemes").addEventListener("click", () => {
     window.open("https://imgflip.com/memegenerator", "_blank");
 });
+
+const searchInput = document.getElementById("searchInput");
+const clearBtn = document.getElementById("clearBtn");
+
+searchInput.addEventListener("click", () => {
+    clearBtn.style.display = searchInput.value.length > 0 ? "block" : "none";
+});
+
+clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    clearBtn.style.display = "none";
+    searchInput.focus();
+})
