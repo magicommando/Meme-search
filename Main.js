@@ -117,11 +117,10 @@ document.getElementById("searchForm").addEventListener("submit", async (e) => {
     }
 });
 
-document.getElementById("clearBtn").addEventListener("click", () => {
-    const input = document.getElementById("searchInput");
-    input.value = "";
-    input.focus();
-});
+document.getElementById("submitIcon").addEventListener("click", () => {
+    document.getElementById("searchForm").dispatchEvent(new Event("submit"));
+})
+
 
 document.getElementById("getTopMemes").addEventListener("click", async () => {
     allMemes = await fetchTopMemes();
@@ -136,12 +135,21 @@ document.getElementById("makeMemes").addEventListener("click", () => {
 const searchInput = document.getElementById("searchInput");
 const clearBtn = document.getElementById("clearBtn");
 
-searchInput.addEventListener("click", () => {
-    clearBtn.style.display = searchInput.value.length > 0 ? "block" : "none";
-});
 
 clearBtn.addEventListener("click", () => {
     searchInput.value = "";
     clearBtn.style.display = "none";
     searchInput.focus();
 })
+
+const pressStartScreen = document.getElementById("pressStartScreen");
+
+function hidePressStart() {
+    pressStartScreen.classList.add("fade-out");
+    setTimeout(() => {
+        pressStartScreen.style.display = "none";
+
+    }, 800);
+}
+
+pressStartScreen.addEventListener("click", hidePressStart);
