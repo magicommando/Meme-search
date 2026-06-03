@@ -14,7 +14,7 @@ function appendMemes(memes) {
 
         img.onLoad = () => {
             const height = img.getBoundingClientRect().height;
-            const rows = Math.ceil(height / 38);
+            const rows = Math.ceil(height / 10);
             wrapper.style.setProperty("--row-span", rows);
 
             setTimeout(() => {

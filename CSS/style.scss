@@ -1,5 +1,225 @@
-@media (max-width: 320px) {
+body {
+  background: url("../Assets/dark-jungle-bckgrnd.png") repeat;
+  font-family: "press start 2p", cursive;
+  color: #fff;
+}
 
+#pressStartScreen {
+  position: fixed;
+  inset: 0;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  cursor: pointer;
+  animation: intropulse 1.2s infinite alternate;
+
+  .press-title {
+    font-family: "press start 2p", cursive;
+    font-size: 2rem;
+    color: #0f0;
+    text-shadow: 0 0 10px #0f0;
+    letter-spacing: 3px;
+  }
+}
+
+@keyframes intropulse {
+  0% { opacity: 0.1; }
+  100% { opacity: 1; }
+}
+
+.fade-out {
+  animation: fadeOut 3s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  border-bottom: 3px solid #0f0;
+
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    .logo {
+      width: 100px;
+      image-rendering: pixelated;
+    }
+
+    .site-title {
+      font-family: "press start 2p", cursive;
+      font-size: 1.8rem;
+      color: #0f0;
+      margin: 0;
+      text-shadow: 0 0 15px #0f0;
+    }
+  }
+
+  .welcome {
+    margin: 40px;
+    color: #0f0;
+    text-shadow: 0 0 15px #0f0;
+  }
+
+  .navbar {
+    display: flex;
+    gap: 18px;
+
+    a {
+      text-decoration: none;
+    }
+
+    .nav-btn {
+      padding: 10px 18px;
+      font-family: "press start 2p", cursive;
+      font-size: 1rem;
+      color: #fff;
+      border: 3px solid;
+      border-radius: 0;
+      image-rendering: pixelated;
+      box-shadow: 0 0 8px currentColor, inset 0 0 6px currentColor;
+      transition: 0.15s ease;
+
+      &:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 0 12px currentColor, inset 0 0 10px currentColor;
+      }
+
+      &.blue { color: #00aeff; border-color: #00aeff; }
+      &.green { color: #0f0; border-color: #0f0; }
+      &.red { color: #ff0000; border-color: #ff0000; }
+      &.purple { color: #800080; border-color: #800080; }
+    }
+  }
+}
+
+.search-bar {
+  position: relative;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+
+  input {
+    width: 100%;
+    padding: 10px 40px;
+    font-size: 1rem;
+    border-radius: 25px;
+    border: 2px solid #444;
+    background: #fff;
+    color: #000;
+    outline: none;
+    box-shadow: 0 0 20px #0f0;
+  }
+
+  .icon {
+    position: absolute;
+    font-size: 1.2rem;
+    color: #aaa;
+    cursor: pointer;
+  }
+
+  .search-icon { right: 8px; }
+  .clear-icon { right: 40px; display: none; }
+}
+
+
+#results {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  grid-auto-rows:25px;
+  grid-auto-flow: dense;
+}
+
+.meme-box {
+  break-inside: avoid;
+  grid-row-end: span var(--row-span, 1);
+}
+
+.meme-img {
+  width: 100%;
+  display: block;
+  border-radius: 30px;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+
+  &.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.meme-caption {
+  margin-top: 6px;
+  font-size: 0.8rem;
+  color: #0f0;
+  text-align: center;
+  font-family: "press start 2p", cursive;
+  text-shadow: 0 0 15px #0f0;
+}
+
+// ABOUT SECTION
+.about-box {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border: 3px solid #0f0;
+  box-shadow: 0 0 20px #0f0;
+  font-family: "press start 2p", cursive;
+  text-align: center;
+
+  h2 {
+    font-size: 1.5rem;
+    color: #0f0;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #0f0;
+  }
+
+  p {
+    font-size: 0.9rem;
+    color: #fff;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    text-shadow: 0 0 5px #0f0;
+  }
+}
+
+// FOOTER
+footer small {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
+// MEDIA QUERIES
+@media (max-width: 480px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 320px) {
   body {
     padding: 0 6px;
     background-size: 200px;
@@ -11,14 +231,8 @@
     padding: 10px;
   }
 
-  .logo {
-    width: 70px;
-  }
-
-  .site-title {
-    font-size: 1.2rem;
-    margin-top: 6px;
-  }
+  .logo { width: 70px; }
+  .site-title { font-size: 1.2rem; margin-top: 6px; }
 
   .navbar {
     flex-direction: column;
@@ -31,62 +245,12 @@
     }
   }
 
-  .welcome {
-    font-size: 0.7rem;
-    margin-top: 20px;
-    padding: 0 10px;
-  }
-
-  .search-bar {
-    max-width: 100%;
-    input {
-      font-size: 0.8rem;
-      padding: 8px 35px 8px 35px;
-    }
-
-    .icon {
-      font-size: 1rem;
-    }
-
-    .search-icon {
-      right: 6px;
-    }
-
-    .clear-icon {
-      right: 32px;
-    }
-  }
-
   #results {
     grid-template-columns: 1fr;
-    gap: 12px;
-    grid-auto-rows: 10px;
-  }
-
-  .meme-box {
-    margin-bottom: 12px;
+    gap: 10px;
   }
 
   .meme-caption {
-    font-size: 0.6rem;
-    margin-top: 4px;
-  }
-
-  .meme-img {
-    border-radius: 4px;
-  }
-
-  .about-box {
-    padding: 12px;
-    margin: 20px 0;
-    font-size: 0.7rem;
-
-    h2 {
-      font-size: 1rem;
-    }
-  }
-
-  footer small {
     font-size: 0.6rem;
   }
 }
