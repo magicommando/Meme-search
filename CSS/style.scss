@@ -192,7 +192,6 @@ header {
   text-shadow: 0 0 15px #0f0;
 }
 
-// ABOUT SECTION
 .about-box {
   max-width: 800px;
   margin: 40px auto;
@@ -230,7 +229,6 @@ footer small {
   margin-top: 800px;
 }
 
-// MEDIA QUERIES
 @media (max-width: 480px) {
   .navbar {
     flex-direction: column;
