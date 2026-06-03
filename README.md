@@ -12,16 +12,16 @@
 
 Overview:
 ---------
-Meme Search Engine is a simple web application that allows users to search for memes
-using the Imgflip API. It displays meme results in a grid layout and includes options
-to view top memes, create memes, and read an About section. The design uses a retro
-pixel aesthetic inspired by early web pages and arcade interfaces.
+Meme Search Engine is a simple but beautiful web application that allows users to search for memes
+using the Imgflip API. It displays meme results in a grid layout inspired by pinterest and includes options
+to view top memes, create memes, and read an About message. The design uses a retro
+pixel aesthetic inspired by early web pages and arcade interfaces paying homage to the OGs.
 
 User stories:
 -------------
-- As a gangsta user, I want to be impressed when the page loads and see something retro.
-- as a gangsta user, I want to look up memes like a modern search engine with functional icons.
-- as a gangsta user, I want to laugh, be inspired to create memes to make others laugh.
+- As a user, I want to be impressed when the page loads and see something retro.
+- as a user, I want to look up memes like a modern search engine with functional icons.
+- as a user, I want to laugh, be inspired to create memes to make others laugh.
 Wireframes:
 -----------
 BEHOLD! some wireframes I came up with whilst peruzing the interwebs for inspiration.
@@ -107,12 +107,12 @@ Future Improvements:
 - Include meme upload feature.
 - Add animated transitions between sections.
 
-##Skills obtained:
+## Skills obtained:
 ------------------
-During the course of putting together this Meme search webpage I obtained the knowlede to work with public API, parse JSON data returned from an external source. I had a challenging but insightful experiance using JavaScript to manipulate the DOM and mess with content based on user input. I had an even wonderful time creating a responsive layout using CSS grid, flexbox, and media queries.
+During the course of putting together this Meme search webpage I obtained the knowlede to work with public API, parse JSON data returned from an external source. I had a challenging but insightful experiance using JavaScript to manipulate the DOM and mess with content based on user input. I had an even more wonderful time creating a responsive layout using CSS grid, flexbox, and media queries.
 
 I understand small web aplication through this project, file structures, Git hub version control, SCSS as a preprocessor compiling into CSS. I'll have to say innerstanding breakpoints and mobile layouts sure help grasp the concept of responsive design.
-I hade many bugs along the way but resolving each one lead to a better version of my vision.
+I had many bugs along the way but resolving each one lead to a better version of my vision.
 
 ## Comments
 -----------
