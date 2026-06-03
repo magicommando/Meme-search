@@ -119,6 +119,8 @@ I had many bugs along the way but resolving each one lead to a better version of
 -----------
 This project was fun, consuming at times considering I had other responsibilities. It truly allowed me to utilize my creative thinking and design skills. Once I had the wire frame figured out the rest was just a goal to traverse through code, HTML reminds me of MySpace days and JS is very obtuse but managable. I stole the idea of infinite scroll from classmate Amanda, the monkey theme helps pull my interest in these projects, as I often suffer from motivation problems. Fade in and out, crying monkey, text-shadow, icons in search bars, neon in a dark gloomy background were all fun experiments to explore styling and scripts.
 
+
+<pre> <code>
 ------------------------------------------------------------
    Project: Meme Search Engine
    Author : Corbin
@@ -128,6 +130,7 @@ This project was fun, consuming at times considering I had other responsibilitie
    Thank you for reviewing this project.
    May your memes be dank and your searches successful.
 ------------------------------------------------------------
+</code></pre>
 
 License:
 --------
