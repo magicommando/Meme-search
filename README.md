@@ -54,22 +54,24 @@ Features:
 
 Technologies Used:
 ------------------
-HTML
-CSS / SCSS
-JavaScript
-Imgflip API
+- HTML
+- CSS / SCSS
+- JavaScript
+- Imgflip API
 
 File Structure:
 ---------------
-index.html
-css/
+ <pre> <code>
+ index.html
+ css/
   style.css
   style.scss
-js/
-  main.js
-Assets/
+ js/
+   main.js
+ Assets/
   Logo.png
   sad-monkey.png
+  </code></pre>
 
 How It Works:
 -------------
