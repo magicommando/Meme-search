@@ -22,7 +22,8 @@ User stories:
 - As a user, I want to be impressed when the page loads and see something retro.
 - as a user, I want to look up memes like a modern search engine with functional icons.
 - as a user, I want to laugh, be inspired to create memes to make others laugh.
-Wireframes:
+
+## Wireframes:
 -----------
 BEHOLD! some wireframes I came up with whilst peruzing the interwebs for inspiration.
 
