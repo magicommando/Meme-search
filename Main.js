@@ -2,42 +2,39 @@ let allMemes = [];
 let currentPage = 1;
 const pageSize = 12;
 
+function appendMemes(memes) {
+    memes.forEach((meme,index) => {
+        const wrapper = document.createElement("div");
+        wrapper,classList.add("meme-box");
+
+        const img = document.createElement("img");
+        img.src = meme.url;
+        img.alt = meme.name;
+        img.classList.add("meme-img");
+
+        img.onLoad = () => {
+            const height = img.getBoundingClientRect().height;
+            const rows = Math.ceil(height / 38);
+            wrapper.style.setProperty("--row-span", rows);
+
+            setTimeout(() => {
+                img.classList.add("fade-in");
+            }, index * 50);
+        };
+
+        const caption = document.createElement("p");
+        caption.classList.add("meme-caption");
+        caption.textContent = meme.name;
+
+        wrapper.appendChild(img);
+        wrapper.appendChild(caption);
+        results.appendChild(wrapper);
+    });
+}
 function renderPage() {
-    const start = (currentPage - 1) * pageSize;
-    const end = start + pageSize;
-    const pageMemes = allMemes.slice(start, end);
-
-    displayMemes(pageMemes);
-    renderPaginationControls();
+    displayMemes(allMemes);
 }
 
-function renderPaginationControls() {
-    const footer = document.querySelector("footer");
-    const totalPages = Math.ceil(allMemes.length / pageSize);
-
-    let html = '<div class="pagination">';
-
-    if (currentPage > 1) {
-        html += `<button class="page-btn" data-page="${currentPage - 1}">Prev</button>`;
-    }
-    for (let i = 1; i <= totalPages; i++) {
-        html += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
-    }
-    if (currentPage < totalPages) {
-        html += `<button class="page-btn" data-page="${currentPage + 1}">Next</button>`;
-    }
-    html += '</div>';
-
-   
-    footer.innerHTML = html;
-
-     document.querySelectorAll(".page-btn").forEach(btn => {
-         btn.addEventListener("click", () => {
-            currentPage = Number(btn.dataset.page);
-            renderPage();
-         });
-     });
-}
 
 
 function displayMemes(memes) {
@@ -45,18 +42,30 @@ function displayMemes(memes) {
     results.innerHTML = "";
 
     memes.forEach((meme, index) => {
+        const wrapper = document.createElement("div");
+        wrapper.classList.add("meme-box");
+
         const img = document.createElement("img");
         img.src = meme.url;
         img.alt = meme.name;
         img.classList.add("meme-img");
 
         img.onload = () => {
+            const height = img.getBoundingClientRect().height;
+            const rows = Math.ceil(height / 38);
+            wrapper.style.setProperty("--row-span", rows);
             setTimeout(() => {
-            img.classList.add("fade-in");
+                img.classList.add("fade-in");
             }, index * 50);
         };
 
-        results.appendChild(img);
+        const caption = document.createElement("p");
+        caption.classList.add("meme-caption");
+        caption.textContent = meme.name;
+
+        wrapper.appendChild(img);
+        wrapper.appendChild(caption);
+        results.appendChild(wrapper);
 
     });
 }
@@ -104,10 +113,37 @@ document.getElementById("home").addEventListener("click", () => {
 
     const results = document.getElementById("results");
     const footer = document.querySelector("footer");
+    const about = document.getElementById("aboutSection");
+
+    about.style.display = "none"
+    about.innerHTML = "";
+
     results.innerHTML ="";
-    
     footer.innerHTML = "";
 });
+
+document.getElementById("about").addEventListener("click", () => {
+    const about = document.getElementById("aboutSection");
+    const results = document.getElementById("results");
+    const footer = document.querySelector("footer");
+
+    results.innerHTML = "";
+    footer.innerHTML = "";
+
+    about.style.display = "block";
+    about.innerHTML = `
+        <div class="about-box">
+            <h2>About Meme Search</h2>
+            <p>This Meme Search application was created by the Ultra Gangsta also known as Corbin,
+            built to look super cool and retro.</p>
+
+            <p>The goal is to stand out from the rest while flexing creativity and superior
+            meme‑searching capabilities. Witness greatness. Enjoy the experience. Or don’t.
+            I know I DID.</p>
+        </div>
+    `;
+});
+
 
 document.getElementById("searchForm").addEventListener("submit", async (e) => {
     e.preventDefault();
@@ -151,5 +187,29 @@ function hidePressStart() {
 
     }, 800);
 }
-
 pressStartScreen.addEventListener("click", hidePressStart);
+
+let loaded = false;
+let loadedCount =0;
+const chunkSize =20;
+window.addEventListener("scroll", () => {
+    if (loading) return;
+
+    const scrollPos = window.innerHeight + window.scrollY;
+    const bottom = document.body.offsetHeight - 300;
+    if (scrollPos >= bottom) {
+        loadMoreMemes();
+        if (loading) return;
+        if (loadedCount >= allMemes.length) return;
+
+        loading = true;
+
+        const nextChunk = allMemes.slice(leadedCount, loadedCount +ChunkSize);
+        loadedCount += chunkSize;
+
+        appendMemes(nextChunk)
+        loading = false;
+    }
+});
+
+

@@ -6,10 +6,8 @@ body {
 }
 @media (max-width: 480px) {
     .navbar { 
-        flex-direction: center;
-    }
-    .grid-container {
-        grid-template-columns: 1fr;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -32,12 +30,12 @@ body {
     letter-spacing: 3px;
 }
 @keyframes intropulse {
-    0% { opacity: 0.6; }
+    0% { opacity: 0.1; }
     100% { opacity: 1; }
 }
 
 .fade-out {
-    animation: fadeOut 0.8s forwards;
+    animation: fadeOut 3s forwards;
 }
 
 @keyframes fadeOut {
@@ -138,13 +136,39 @@ body {
     margin-top: 40px;
     text-shadow: 0 0 20px #0f0;
 }
+
+#results {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    grid-auto-rows: 24px;
+    grid-auto-flow: dense;
+}
+
+
+.meme-box {
+    break-inside: avoid;
+    grid-row-end: span var(--row-span, 1);
+    
+    
+        
+}
+
+.meme-caption {
+    margin-top: 6px;
+    font-size: 0.8rem;
+    color: #0f0;
+    text-align: center;
+    font-family: 'press start 2p', cursive;
+    text-shadow: 0 0 6px #0f0;
+}
 .meme-img {
     width: 100%;
-    box-shadow: 10px 10px 10px #0f0;
-    border-radius: 10px;
+    display: block;
+    opacity: 0;
+    border-radius: 20px;
     transform: translateY(10px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-
+    transition: opacity 0.4s ease, transform 0.4s ease;
 }
 
 .meme-img.fade-in {
@@ -163,25 +187,23 @@ body {
 }
 
 .page-btn {
-    padding: 8px 12px;
-    background: yellow;
-    color: black;
-    border: 2px solid white;
-    box-shadow: 10px 10px 10px rgba(255, 255, 255, 0.3);
+   padding: 10px 18px;
+    font-family: 'press start 2p', cursive;
+    font-size: 1rem;
+    text-decoration: none;
+    color: #0f0;
+    border: 3px solid;
+    border-radius: 0;
+    image-rendering: pixelated;
+    box-shadow: 0 0 8px currentColor, inset 0 0 6px currentColor;
+    transition: 0.15s ease;
     cursor: pointer;
-    border-radius: 4px;
 }
 
 .page-btn.active {
-    background:n #0f0;
+    background: #0f0;
     color: #000;
     font-weight: bold;
-}
-.site-title {
-    text-align: center;
-    font-family: 'press start 2p', cursive;
-    font-size: 2.5rem;
-    margin: 1rem 0;
 }
 
 .search-bar {
@@ -219,4 +241,21 @@ body {
 .clear-icon {
     right: 40px;
     display: none;
+}
+
+.about-box {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border: 3px solid #0f0;
+    box-shadow: 0 0 20px #0f0;
+    font-family: 'press start 2p', cursive;
+    text-align: center;
+}
+.about-title {
+    font-size: 1.5rem;
+    color: #0f0;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #0f0;
 }
