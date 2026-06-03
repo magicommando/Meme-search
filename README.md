@@ -1,4 +1,4 @@
-# Meme-search
+# Meme-Search
 <pre> <code>
  __  __                         _____                            _     
 |  \/  |                       / ____|                          | |    
@@ -22,7 +22,25 @@ User stories:
 - As a gangsta user, I want to be impressed when the page loads and see something retro.
 - as a gangsta user, I want to look up memes like a modern search engine with functional icons.
 - as a gangsta user, I want to laugh, be inspired to create memes to make others laugh.
+Wireframes:
+-----------
+BEHOLD! some wireframes I came up with whilst peruzing the interwebs for inspiration.
 
+### Desktop view
+![Desktop Wireframe](Assets/Meme%20search%20engine(front%20page).drawio.png)
+### Results page
+![Results wireframe](Assets/meme%20search%20engine.drawio.png)
+### Mobile page
+![Mobile wireframe](Assets/Meme%20search%20engine(%20mobile%20).drawio.png)
+
+Screenshots:
+------------
+### Desktop view
+![Desktop view](Assets/Desktop-view.jpeg)
+### Results page
+![Results page](Assets/Results-page.jpeg)
+### Mobile page
+[Mobile page](Assets/mobile-page.jpg)
 Features:
 ---------
 - Search memes by keyword
