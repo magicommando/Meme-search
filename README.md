@@ -40,7 +40,7 @@ Screenshots:
 ### Results page
 ![Results page](Assets/Results-page.jpeg)
 ### Mobile page
-[Mobile page](Assets/mobile-view.png)
+![Mobile page](Assets/mobile-view.png)
 Features:
 ---------
 - Search memes by keyword
