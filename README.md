@@ -75,12 +75,15 @@ File Structure:
 
 How It Works:
 -------------
-1. User enters a search term in the search bar.
+1. User must click or press to render home page, then enter a search term in the search bar.
 2. JavaScript sends a request to the Imgflip API.
 3. The API returns meme data in JSON format.
 4. The app filters and displays memes in a grid.
-5. If no memes match, a “No Results Found” message with a sad monkey appears.
+5. If no memes match, a “No Results Found” message with a sad bouncing monkey appears.
 6. The Home button clears results and restores the footer text.
+7. Create sends user to ImgFlip page to create their own memes
+8. Top memes loads most popular memes from API site.
+9. About when clicked renders for user a fun message from creator.
 
 API Reference:
 --------------
@@ -104,9 +107,26 @@ Future Improvements:
 - Include meme upload feature.
 - Add animated transitions between sections.
 
-Author:
--------
-Created by Corbin (Ultra Gangsta)
+##Skills obtained:
+------------------
+During the course of putting together this Meme search webpage I obtained the knowlede to work with public API, parse JSON data returned from an external source. I had a challenging but insightful experiance using JavaScript to manipulate the DOM and mess with content based on user input. I had an even wonderful time creating a responsive layout using CSS grid, flexbox, and media queries.
+
+I understand small web aplication through this project, file structures, Git hub version control, SCSS as a preprocessor compiling into CSS. I'll have to say innerstanding breakpoints and mobile layouts sure help grasp the concept of responsive design.
+I hade many bugs along the way but resolving each one lead to a better version of my vision.
+
+## Comments
+-----------
+This project was fun, consuming at times considering I had other responsibilities. It truly allowed me to utilize my creative thinking and design skills. Once I had the wire frame figured out the rest was just a goal to traverse through code, HTML reminds me of MySpace days and JS is very obtuse but managable. I stole the idea of infinite scroll from classmate Amanda, the monkey theme helps pull my interest in these projects, as I often suffer from motivation problems. Fade in and out, crying monkey, text-shadow, icons in search bars, neon in a dark gloomy background were all fun experiments to explore styling and scripts.
+
+------------------------------------------------------------
+   Project: Meme Search Engine
+   Author : Corbin
+   API    : Imgflip Meme API
+   Year   : 2026
+
+   Thank you for reviewing this project.
+   May your memes be dank and your searches successful.
+------------------------------------------------------------
 
 License:
 --------
