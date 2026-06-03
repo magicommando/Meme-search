@@ -77,6 +77,17 @@ async function searchMemes(query) {
 
     allMemes = memes.filter(meme => meme.name.toLowerCase().includes(query.toLowerCase())
     );
+    if (allMemes.length === 0) {
+        const results = document.getElementById("results");
+        results.innerHTML = `
+            <div class="no-results">
+                <img src="Assets/sad-monkey.png" alt=sad Monkey" class="sad-monkey">
+                <h2>No Results Found</h2>
+                <p>Try searching something else, Ultra Gangsta.</p>
+            </div>
+        `;
+        return;
+    }
 
     currentPage = 1;
     renderPage();
@@ -119,7 +130,7 @@ document.getElementById("home").addEventListener("click", () => {
     about.innerHTML = "";
 
     results.innerHTML ="";
-    footer.innerHTML = "";
+    footer.innerHTML = `<small>Sourced from Imgflip API ©2026</small>`;
 });
 
 document.getElementById("about").addEventListener("click", () => {

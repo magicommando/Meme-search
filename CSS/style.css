@@ -153,6 +153,21 @@ header .navbar .nav-btn.purple {
   grid-auto-flow: dense;
 }
 
+.no-results {
+  text-align: center;
+  font-family: "press start 2p", cursive;
+  color: #0f0;
+  text-shadow: 0 0 10px #0f0;
+}
+
+.sad-monkey {
+  width: 300px;
+  margin-bottom: 20px;
+  filter: drop-shadow(0 0 10px #0f0);
+  image-rendering: pixelated;
+  animation: monkey-sad-bounce 1.5s infinite ease-in-out;
+}
+
 .meme-box {
   -moz-column-break-inside: avoid;
        break-inside: avoid;
@@ -208,10 +223,24 @@ header .navbar .nav-btn.purple {
   text-shadow: 0 0 5px #0f0;
 }
 
+@keyframes monkey-sad-bounce {
+  0% {
+    transform: translateY(0);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-6px);
+    opacity: 1;
+  }
+  100% {
+    transformY: translateY(0);
+    opacity: 0.8;
+  }
+}
 footer small {
   display: block;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 800px;
 }
 
 @media (max-width: 480px) {
