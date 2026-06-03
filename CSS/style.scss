@@ -1,0 +1,92 @@
+@media (max-width: 320px) {
+
+  body {
+    padding: 0 6px;
+    background-size: 200px;
+  }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .logo {
+    width: 70px;
+  }
+
+  .site-title {
+    font-size: 1.2rem;
+    margin-top: 6px;
+  }
+
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+
+    .nav-btn {
+      width: 100%;
+      font-size: 0.8rem;
+      padding: 8px 12px;
+    }
+  }
+
+  .welcome {
+    font-size: 0.7rem;
+    margin-top: 20px;
+    padding: 0 10px;
+  }
+
+  .search-bar {
+    max-width: 100%;
+    input {
+      font-size: 0.8rem;
+      padding: 8px 35px 8px 35px;
+    }
+
+    .icon {
+      font-size: 1rem;
+    }
+
+    .search-icon {
+      right: 6px;
+    }
+
+    .clear-icon {
+      right: 32px;
+    }
+  }
+
+  #results {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    grid-auto-rows: 10px;
+  }
+
+  .meme-box {
+    margin-bottom: 12px;
+  }
+
+  .meme-caption {
+    font-size: 0.6rem;
+    margin-top: 4px;
+  }
+
+  .meme-img {
+    border-radius: 4px;
+  }
+
+  .about-box {
+    padding: 12px;
+    margin: 20px 0;
+    font-size: 0.7rem;
+
+    h2 {
+      font-size: 1rem;
+    }
+  }
+
+  footer small {
+    font-size: 0.6rem;
+  }
+}
